@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.gstatic.com; font-src https://fonts.gstatic.com; connect-src https://api.anthropic.com https://www.google-analytics.com; img-src 'self' data:; frame-ancestors 'none';">
+<meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+<meta name="referrer" content="no-referrer">
+<title>CONSCIOUSNESS &mdash; AVIDAA</title>
+<meta name="description" content="AVIDAA CONSCIOUSNESS &mdash; An archive of the deepest unsolved question in science. Self-awareness, quantum mind, nanotechnology, transcendence. Updated 2026.">
+<meta name="theme-color" content="#0a0806">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://avidaa1.github.io/consciousness">
+<meta property="og:title" content="CONSCIOUSNESS &mdash; AVIDAA">
+<meta property="og:description" content="The deepest unsolved question in science. An archive updated 2026.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230a0806'/%3E%3Ccircle cx='16' cy='16' r='9' fill='none' stroke='%23c8861a' stroke-width='1.2'/%3E%3Ccircle cx='16' cy='16' r='2.5' fill='%23c8861a'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G8M1YZQ8WF"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-G8M1YZQ8WF');</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --bg:#0a0806;
+  --bg2:#12100c;
+  --bg3:#1a1410;
+  --bone:#e8d5b0;
+  --bone2:rgba(232,213,176,.65);
+  --bone3:rgba(232,213,176,.35);
+  --amber:#c8861a;
+  --amber2:rgba(200,134,26,.5);
+  --teal:#2a6b6b;
+  --teal2:rgba(42,107,107,.6);
+  --red:#7a2020;
+  --serif:'Playfair Display',Georgia,serif;
+  --mono:'Space Mono',monospace;
+  --body:system-ui,-apple-system,sans-serif;
+}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--bone2);font-family:var(--body);font-size:16px;line-height:1.7;overflow-x:hidden;}
+@media(prefers-reduced-motion:reduce){
+  *{animation-duration:.01ms!important;transition-duration:.01ms!important;}
+  #eeg-canvas{display:none!important;}#eeg-band-canvas{display:none!important;}
+}
+
+/* TOPBAR */
+#topbar{position:fixed;top:0;left:0;right:0;z-index:50;min-height:44px;display:flex;align-items:center;justify-content:space-between;padding:0 12px;background:rgba(10,8,6,.92);border-bottom:1px solid rgba(200,134,26,.12);backdrop-filter:blur(16px);}
+#section-nav-bar{position:sticky;top:44px;z-index:40;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;background:rgba(10,8,6,.95);border-bottom:1px solid rgba(200,134,26,.1);backdrop-filter:blur(12px);}
+.snav{font-family:var(--mono);font-size:11px;letter-spacing:1px;padding:10px 18px;color:var(--bone3);text-decoration:none;white-space:nowrap;border-right:1px solid rgba(200,134,26,.07);transition:color .2s;}
+.snav:last-child{border-right:none;}
+.snav:hover{color:var(--amber);}
+#topbar-wordmark{font-family:var(--mono);font-size:11px;letter-spacing:1px;color:var(--amber);opacity:.8;text-transform:uppercase;white-space:nowrap;flex-shrink:0;}
+#topbar-nav{display:flex;align-items:center;gap:0;flex:1;justify-content:flex-end;min-width:0;}
+.tnav{font-family:var(--mono);font-size:11px;letter-spacing:0;padding:6px 10px;color:var(--bone3);background:transparent;border:none;cursor:pointer;text-decoration:none;display:inline-block;transition:color .2s;text-transform:uppercase;border-right:1px solid rgba(200,134,26,.08);white-space:nowrap;flex-shrink:1;}
+.tnav:last-of-type{border-right:none;}
+.tnav:hover{color:var(--amber);}
+#back-home{font-family:var(--mono);font-size:11px;letter-spacing:0;text-decoration:none;padding:6px 10px;border-left:1px solid rgba(200,134,26,.15);background:linear-gradient(90deg,#ff0080,#ff8c00,#ffe000,#00ff80,#00bfff,#a855f7,#ff0080);background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-size:200%;animation:rainbow 3s linear infinite;white-space:nowrap;flex-shrink:0;}
+#back-home:hover{animation-duration:1s;}
+@keyframes rainbow{from{background-position:0%;}to{background-position:200%;}}
+#ping-trigger{font-family:var(--mono);font-size:11px;letter-spacing:0;padding:6px 10px;border:1px solid var(--amber2);color:var(--amber);background:transparent;cursor:pointer;transition:all .2s;margin-left:6px;white-space:nowrap;flex-shrink:0;}
+#ping-trigger:hover{background:rgba(200,134,26,.08);border-color:var(--amber);}
+#ping-trigger.live{border-color:var(--teal2);color:#3a9b9b;animation:livepulse 2s ease-in-out infinite;}
+@keyframes livepulse{0%,100%{opacity:.7;}50%{opacity:1;}}
+@media(max-width:768px){
+  #topbar{padding:0 6px;}
+  .tnav{padding:4px 5px;}
+}
+
+/* HERO */
+#hero{position:relative;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-start;padding:60px 10vw 80px;overflow:hidden;}
+#eeg-canvas{position:absolute;inset:0;pointer-events:none;opacity:.55;}
+#eeg-band{position:relative;width:100%;height:180px;overflow:hidden;border-bottom:1px solid rgba(200,134,26,.07);}
+#eeg-band-canvas{display:block;width:100%;height:100%;}
+.hero-label{font-family:var(--mono);font-size:11px;letter-spacing:6px;color:var(--amber);opacity:.7;margin-bottom:20px;text-transform:uppercase;}
+.hero-title{font-family:var(--serif);font-size:clamp(52px,9vw,120px);font-weight:900;line-height:.95;letter-spacing:-2px;color:var(--bone);margin-bottom:24px;position:relative;z-index:2;}
+.hero-title em{font-style:italic;color:var(--amber);}
+.hero-tagline{font-family:var(--mono);font-size:11px;letter-spacing:4px;color:var(--bone3);text-transform:uppercase;margin-bottom:40px;position:relative;z-index:2;}
+#typewriter-wrap{font-family:var(--serif);font-size:clamp(15px,2vw,19px);font-style:italic;color:rgba(232,213,176,.45);max-width:520px;line-height:1.75;min-height:2em;position:relative;z-index:2;}
+.tw-cur{display:inline-block;width:1px;height:1em;background:var(--amber);margin-left:2px;animation:blink .7s step-end infinite;vertical-align:middle;}
+@keyframes blink{0%,100%{opacity:1;}50%{opacity:0;}}
+.hero-scroll{position:absolute;bottom:40px;right:10vw;display:flex;flex-direction:column;align-items:center;gap:8px;opacity:.3;}
+.hero-scroll span{font-family:var(--mono);font-size:11px;letter-spacing:4px;color:var(--bone);writing-mode:vertical-rl;}
+.hero-scroll-line{width:1px;height:48px;background:linear-gradient(to bottom,var(--amber),transparent);}
+
+/* SECTIONS */
+.c-section{padding:100px 10vw;border-top:1px solid rgba(200,134,26,.07);position:relative;}
+.c-section:first-of-type{border-top:none;}
+.sec-label{font-family:var(--mono);font-size:11px;letter-spacing:6px;color:var(--amber);opacity:.6;text-transform:uppercase;margin-bottom:16px;}
+.sec-title{font-family:var(--serif);font-size:clamp(28px,4.5vw,52px);font-weight:900;color:var(--bone);line-height:1.1;margin-bottom:10px;}
+.sec-title em{font-style:italic;color:var(--amber);}
+.sec-sub{font-family:var(--body);font-size:14px;color:var(--bone3);letter-spacing:.5px;margin-bottom:60px;max-width:600px;}
+
+/* TWO-COL LAYOUT */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;}
+.three-col{display:grid;grid-template-columns:repeat(3,1fr);gap:48px;align-items:start;}
+@media(max-width:900px){.two-col,.three-col{grid-template-columns:1fr;gap:40px;}}
+
+/* CONTENT BLOCK &mdash; amber left bar, no box */
+.cblock{border-left:2px solid var(--amber);padding:0 0 0 24px;margin-bottom:48px;}
+.cblock-tag{font-family:var(--mono);font-size:11px;letter-spacing:4px;color:var(--amber);opacity:.7;text-transform:uppercase;margin-bottom:10px;}
+.cblock-title{font-family:var(--serif);font-size:18px;font-weight:700;color:var(--bone);margin-bottom:12px;line-height:1.3;}
+.cblock-body{font-size:14px;line-height:1.75;color:var(--bone2);}
+.cblock-body strong{color:var(--bone);font-weight:600;}
+.cblock-body em{color:var(--amber);font-style:normal;}
+.cblock.teal{border-color:var(--teal);}
+.cblock.teal .cblock-tag{color:var(--teal);}
+.cblock.red-flag{border-color:var(--red);}
+.cblock.red-flag .cblock-tag{color:#b03030;}
+.cblock-badge{font-family:var(--mono);font-size:11px;letter-spacing:2px;padding:2px 8px;border:1px solid rgba(200,134,26,.25);color:var(--amber);display:inline-block;margin-top:12px;margin-right:6px;}
+.cblock-badge.teal-b{border-color:var(--teal2);color:#3a9b9b;}
+.cblock-badge.new{border-color:rgba(200,134,26,.6);background:rgba(200,134,26,.08);}
+
+/* STAT BAND */
+.stat-band{display:flex;flex-wrap:wrap;border:1px solid rgba(200,134,26,.1);margin-bottom:60px;background:var(--bg2);}
+.stat-cell{flex:1;min-width:140px;padding:28px 24px;border-right:1px solid rgba(200,134,26,.07);text-align:center;}
+.stat-cell:last-child{border-right:none;}
+.stat-n{font-family:var(--mono);font-size:clamp(22px,3vw,36px);font-weight:700;color:var(--amber);line-height:1;}
+.stat-l{font-family:var(--mono);font-size:11px;letter-spacing:3px;color:var(--bone3);text-transform:uppercase;margin-top:8px;}
+.stat-cell.teal-s .stat-n{color:#3a9b9b;}
+@media(max-width:600px){.stat-band{flex-direction:column;}.stat-cell{border-right:none;border-bottom:1px solid rgba(200,134,26,.07);}}
+
+/* PULL QUOTE */
+.pull-quote{padding:80px 10vw;text-align:center;background:var(--bg2);border-top:1px solid rgba(200,134,26,.07);border-bottom:1px solid rgba(200,134,26,.07);}
+.pull-quote blockquote{font-family:var(--serif);font-size:clamp(18px,2.8vw,28px);font-style:italic;color:var(--bone);line-height:1.6;max-width:780px;margin:0 auto 24px;}
+.pull-quote cite{font-family:var(--mono);font-size:11px;letter-spacing:3px;color:var(--amber);opacity:.7;font-style:normal;display:block;}
+
+/* TIMELINE */
+.tl-wrap{position:relative;padding-left:40px;max-width:700px;}
+.tl-wrap::before{content:'';position:absolute;left:8px;top:8px;bottom:8px;width:1px;background:linear-gradient(to bottom,var(--amber),rgba(200,134,26,.1));}
+.tl-item{position:relative;margin-bottom:48px;}
+.tl-item::before{content:'';position:absolute;left:-36px;top:6px;width:8px;height:8px;border-radius:50%;border:1px solid var(--amber);background:var(--bg);}
+.tl-year{font-family:var(--mono);font-size:11px;letter-spacing:4px;color:var(--amber);text-transform:uppercase;margin-bottom:8px;}
+.tl-title{font-family:var(--serif);font-size:16px;font-weight:700;color:var(--bone);margin-bottom:8px;}
+.tl-body{font-size:13px;line-height:1.7;color:var(--bone2);}
+
+/* FILM ENTRY */
+.film-entry{border-top:1px solid rgba(232,213,176,.06);padding:40px 0;display:grid;grid-template-columns:80px 1fr;gap:32px;align-items:start;}
+.film-year-col{font-family:var(--mono);font-size:32px;font-weight:700;color:rgba(232,213,176,.08);line-height:1;padding-top:4px;}
+.film-title{font-family:var(--serif);font-size:20px;font-weight:700;color:var(--bone);margin-bottom:10px;}
+.film-body{font-size:14px;line-height:1.75;color:var(--bone2);}
+.film-tags{margin-top:14px;display:flex;flex-wrap:wrap;gap:8px;}
+.film-tag{font-family:var(--mono);font-size:11px;letter-spacing:2px;padding:3px 10px;border:1px solid rgba(232,213,176,.12);color:var(--bone3);}
+@media(max-width:600px){.film-entry{grid-template-columns:1fr;gap:8px;}.film-year-col{font-size:18px;color:var(--amber);opacity:.5;}}
+
+/* SOURCE NOTE */
+.source-note{font-family:var(--mono);font-size:11px;letter-spacing:1px;color:rgba(232,213,176,.25);margin-top:10px;display:block;line-height:1.6;}
+
+/* PING OVERLAY */
+#ping-overlay{position:fixed;inset:0;z-index:100;background:rgba(10,8,6,.97);backdrop-filter:blur(24px);display:none;flex-direction:column;align-items:center;justify-content:center;padding:24px;}
+#ping-overlay.open{display:flex;}
+#ping-box{width:100%;max-width:660px;border:1px solid rgba(200,134,26,.2);background:rgba(18,16,12,.99);display:flex;flex-direction:column;max-height:82vh;}
+#ping-head{padding:16px 20px;border-bottom:1px solid rgba(200,134,26,.1);display:flex;justify-content:space-between;align-items:center;}
+.ph-title{font-family:var(--mono);font-size:11px;letter-spacing:5px;color:var(--amber);}
+.ph-close{color:var(--bone3);cursor:pointer;font-size:22px;line-height:1;padding:0 4px;transition:color .2s;background:none;border:none;}
+.ph-close:hover{color:var(--bone);}
+#ping-key-area{padding:16px 20px;border-bottom:1px solid rgba(200,134,26,.08);}
+#ping-key-lbl{font-family:var(--mono);font-size:11px;letter-spacing:3px;color:var(--amber);opacity:.6;margin-bottom:10px;text-transform:uppercase;}
+#ping-key-row{display:flex;gap:8px;}
+#ping-key-in{flex:1;background:rgba(200,134,26,.04);border:1px solid rgba(200,134,26,.15);color:var(--bone);font-family:var(--mono);font-size:12px;padding:9px 14px;outline:none;}
+#ping-key-in::placeholder{color:rgba(232,213,176,.2);}
+#ping-save-btn,#ping-forget-btn{font-family:var(--mono);font-size:11px;letter-spacing:2px;padding:9px 14px;background:transparent;cursor:pointer;transition:all .2s;white-space:nowrap;}
+#ping-save-btn{border:1px solid var(--amber2);color:var(--amber);}
+#ping-save-btn:hover{border-color:var(--amber);color:var(--bone);}
+#ping-forget-btn{border:1px solid rgba(232,213,176,.08);color:var(--bone3);}
+#ping-forget-btn:hover{border-color:rgba(180,60,60,.4);color:rgba(200,80,80,.7);}
+#ping-msgs{flex:1;overflow-y:auto;padding:20px;display:flex;flex-direction:column;gap:14px;scrollbar-width:thin;scrollbar-color:rgba(200,134,26,.15) transparent;min-height:220px;}
+.pmsg{font-size:14px;line-height:1.65;padding:12px 16px;max-width:88%;}
+.pmsg.ai{border-left:2px solid var(--amber);color:var(--bone2);align-self:flex-start;background:rgba(200,134,26,.04);}
+.pmsg.ai::before{content:'CONSCIOUSNESS';font-family:var(--mono);font-size:11px;letter-spacing:3px;color:var(--amber);opacity:.6;display:block;margin-bottom:6px;}
+.pmsg.user{border-right:2px solid var(--teal);color:var(--bone2);align-self:flex-end;text-align:right;background:rgba(42,107,107,.04);}
+.ptyping{display:flex;gap:5px;padding:12px 16px;align-self:flex-start;}
+.ptyping span{width:5px;height:5px;background:var(--amber);border-radius:50%;opacity:.3;animation:tdot .8s ease-in-out infinite;}
+.ptyping span:nth-child(2){animation-delay:.15s;}
+.ptyping span:nth-child(3){animation-delay:.3s;}
+@keyframes tdot{0%,100%{opacity:.2;transform:translateY(0);}50%{opacity:.9;transform:translateY(-4px);}}
+#ping-input-row{display:flex;border-top:1px solid rgba(200,134,26,.08);}
+#ping-in{flex:1;background:transparent;border:none;outline:none;color:var(--bone);font-family:var(--body);font-size:14px;padding:14px 18px;}
+#ping-in::placeholder{color:rgba(232,213,176,.2);}
+#ping-go{background:transparent;border:none;border-left:1px solid rgba(200,134,26,.08);color:var(--amber);padding:0 20px;cursor:pointer;font-size:18px;transition:color .2s;}
+#ping-go:hover{color:var(--bone);}
+
+/* TICKER */
+#ticker{position:fixed;bottom:0;left:0;right:0;z-index:30;background:rgba(10,8,6,.9);border-top:1px solid rgba(200,134,26,.08);padding:5px 0;overflow:hidden;}
+.tick-inner{display:flex;white-space:nowrap;animation:tickscroll 70s linear infinite;}
+.tick-inner:hover{animation-play-state:paused;}
+.tick-item{font-family:var(--mono);font-size:11px;letter-spacing:3px;padding:0 32px;color:rgba(232,213,176,.22);}
+.tick-item b{color:var(--amber);}
+@keyframes tickscroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+
+/* FOOTER */
+#footer{padding:80px 10vw 100px;text-align:center;border-top:1px solid rgba(200,134,26,.07);}
+.footer-sig{font-family:var(--mono);font-size:11px;letter-spacing:6px;color:rgba(200,134,26,.3);margin-bottom:8px;}
+.footer-line{font-family:var(--mono);font-size:11px;letter-spacing:3px;color:rgba(232,213,176,.12);}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .8s ease,transform .8s ease;}
+.reveal.visible{opacity:1;transform:none;}
+
+/* UPDATE BADGE */
+.update-badge{display:inline-block;font-family:var(--mono);font-size:11px;letter-spacing:3px;padding:3px 10px;border:1px solid rgba(200,134,26,.3);color:var(--amber);background:rgba(200,134,26,.06);margin-bottom:20px;}
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<header id="topbar">
+  <div id="topbar-wordmark">Consciousness</div>
+  <nav id="topbar-nav">
+    <a id="back-home" href="https://avidaa1.github.io">AVIDAA</a>
+    <button id="ping-trigger" onclick="openPing()">&#x25CF; PING</button>
+  </nav>
+</header>
+<div id="section-nav-bar">
+  <a class="snav" href="#self-aware">Self Aware</a>
+  <a class="snav" href="#quantum">Quantum</a>
+  <a class="snav" href="#source-code">Source</a>
+  <a class="snav" href="#nano">Nano</a>
+  <a class="snav" href="#transcendence">Transcendence</a>
+  <a class="snav" href="#evolution">Evolution</a>
+  <a class="snav" href="#cinema">Cinema</a>
+</div>
+
+<!-- HERO -->
+<div id="eeg-band"><canvas id="eeg-band-canvas"></canvas></div>
+<section id="hero">
+  <canvas id="eeg-canvas"></canvas>
+  <div class="hero-label">AVIDAA &nbsp;&mdash;&nbsp; Consciousness Archive &nbsp;&mdash;&nbsp; 2026</div>
+  <h1 class="hero-title">The question<br>that has no<br><em>answer yet.</em></h1>
+  <div class="hero-tagline">Self &nbsp;&nbsp;&middot;&nbsp;&nbsp; Source &nbsp;&nbsp;&middot;&nbsp;&nbsp; Signal &nbsp;&nbsp;&middot;&nbsp;&nbsp; Singularity</div>
+  <div id="typewriter-wrap"><span id="tw-text"></span><span class="tw-cur"></span></div>
+  <div class="hero-scroll"><span>scroll</span><div class="hero-scroll-line"></div></div>
+</section>
+
+<!-- SECTION 1: SELF AWARE -->
+<section id="self-aware" class="c-section reveal">
+  <div class="sec-label">01 &mdash; Self Aware</div>
+  <h2 class="sec-title">The <em>Hard Problem</em></h2>
+  <p class="sec-sub">Why does subjective experience exist at all? The question physicists, neuroscientists and philosophers cannot yet answer.</p>
+
+  <div class="update-badge">&#x25CF; COGITATE &mdash; Nature, April 2025</div>
+
+  <div class="stat-band">
+    <div class="stat-cell"><div class="stat-n">86B</div><div class="stat-l">Neurons</div></div>
+    <div class="stat-cell"><div class="stat-n">100T</div><div class="stat-l">Synaptic connections</div></div>
+    <div class="stat-cell"><div class="stat-n">~40Hz</div><div class="stat-l">Gamma waves</div></div>
+    <div class="stat-cell teal-s"><div class="stat-n">2025</div><div class="stat-l">COGITATE / Nature</div></div>
+  </div>
+
+  <div class="two-col">
+    <div>
+      <div class="cblock">
+        <div class="cblock-tag">Hard Problem</div>
+        <div class="cblock-title">Why does it feel like something?</div>
+        <div class="cblock-body">David Chalmers formalised the <strong>Hard Problem of Consciousness</strong> in 1995: why does physical information processing give rise to subjective experience at all? Even a complete map of brain activity cannot explain why there is an inner life. Why red looks red. Why pain hurts. The scientific consensus in 2026: still unsolved.</div>
+      </div>
+      <div class="cblock">
+        <div class="cblock-tag">IIT &mdash; Tononi 2004</div>
+        <div class="cblock-title">Integrated Information Theory</div>
+        <div class="cblock-body">Giulio Tononi's IIT proposes consciousness equals integrated information, measured as &Phi; (phi). A system is conscious to the degree it cannot be decomposed into independent parts. In April 2025, the <strong>COGITATE adversarial collaboration</strong> (Nature, DOI: 10.1038/s41586-025-08888-1) ran a seven-year preregistered experiment pitting IIT against Global Neuronal Workspace Theory. Result: IIT's posterior-cortex claim was corroborated. Neither theory was falsified. Both required modification.</div>
+        <span class="source-note">Source: Nature 641, April 2025 &mdash; Melloni, Ferrante et al.</span>
+      </div>
+      <div class="cblock">
+        <div class="cblock-tag">GWT &mdash; Baars</div>
+        <div class="cblock-title">Global Workspace Theory</div>
+        <div class="cblock-body">Baars' GWT models the brain as a theatre: most processing is unconscious; a <strong>global workspace</strong> across the prefrontal cortex broadcasts selected signals. Conscious experience is what it feels like when information wins the broadcast competition. COGITATE challenged GNWT: prefrontal involvement was <em>not</em> found necessary for conscious content. GWT has since evolved into "Global Workspace Dynamics" and a predictive active-inference formulation (Dehaene / Changeux lineage).</div>
+      </div>
+    </div>
+    <div>
+      <div class="cblock">
+        <div class="cblock-tag">HOT Theories</div>
+        <div class="cblock-title">Higher-Order Theories</div>
+        <div class="cblock-body">Rosenthal and Lycan: a mental state is conscious only when the brain holds a higher-order representation of it. A thought about a thought. Consciousness requires meta-cognition: the system must know that it knows. Self-awareness becomes structurally necessary, not incidental.</div>
+      </div>
+      <div class="cblock">
+        <div class="cblock-tag">Neural Correlates</div>
+        <div class="cblock-title">Where it lives in the brain</div>
+        <div class="cblock-body">Research points to the <strong>claustrum</strong> (Crick's last hypothesis), the <strong>thalamocortical system</strong>, and gamma-band synchrony (~40 Hz) as primary correlates. Default Mode Network activity is strongly associated with self-referential thought. Damage to the reticular activating system causes immediate loss of consciousness regardless of cortical integrity. The INTREPID consortium (2025) is testing IIT via direct neuronal inactivation &mdash; the next adversarial trial in progress.</div>
+      </div>
+      <div class="cblock">
+        <div class="cblock-tag">Philosophy</div>
+        <div class="cblock-title">The Binding Problem</div>
+        <div class="cblock-body">Color, motion, shape, sound, memory, emotion &mdash; processed in different cortical regions, yet experienced as one seamless moment. No mechanism fully explains the <strong>binding</strong>. Temporal synchrony, recurrent processing, and attention are candidates. The answer may require rethinking what a unified self actually is.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="pull-quote reveal">
+  <blockquote>There is something it is like to be a bat. The mystery is not that experience happens &mdash; it is that we cannot explain why it happens at all.</blockquote>
+  <cite>Thomas Nagel &mdash; What Is It Like to Be a Bat? (1974)</cite>
+</div>
+
+<!-- SECTION 2: QUANTUM MIND -->
+<section id="quantum" class="c-section reveal">
+  <div class="sec-label">02 &mdash; Quantum Mind</div>
+  <h2 class="sec-title">The <em>Quantum</em> Hypothesis</h2>
+  <p class="sec-sub">Does consciousness exploit quantum mechanics inside the brain? The mainstream says no. The experiment is still running.</p>
+
+  <div class="stat-band">
+    <div class="stat-cell"><div class="stat-n">~20nm</div><div class="stat-l">Microtubule diameter</div></div>
+    <div class="stat-cell"><div class="stat-n">1,121</div><div class="stat-l">IBM Condor qubits (2025)</div></div>
+    <div class="stat-cell teal-s"><div class="stat-n">4,096</div><div class="stat-l">Quantinuum H2 quantum vol.</div></div>
+    <div class="stat-cell"><div class="stat-n">2029</div><div class="stat-l">IBM fault-tolerant target</div></div>
+  </div>
+
+  <div class="two-col">
+    <div>
+      <div class="cblock">
+        <div class="cblock-tag">Penrose &amp; Hameroff &mdash; Orch-OR</div>
+        <div class="cblock-title">Orchestrated Objective Reduction</div>
+        <div class="cblock-body">Penrose and Hameroff propose consciousness arises from quantum computations in <strong>microtubules</strong> inside neurons. Quantum superpositions collapse (Objective Reduction) orchestrated by spacetime geometry. The collapses generate moments of proto-conscious experience. In 2025, Michael Wiest's paper in <em>Neuroscience of Consciousness</em> (niaf011, May 2025) argued the quantum microtubule substrate is now "experimentally supported," citing evidence that inhalational anesthetics target microtubules. A Templeton-funded ($230K) experimental program at Princeton (Scholes, Kalra) and Alberta (Tuszynski) found laser-induced excitations persist longer in microtubules than expected.</div>
+        <span class="source-note">Wiest 2025, Neuroscience of Consciousness niaf011 &mdash; Kalra et al. 2023, ACS Central Science</span>
+      </div>
+      <div class="cblock red-flag">
+        <div class="cblock-tag">Mainstream Critique</div>
+        <div class="cblock-title">The Decoherence Problem</div>
+        <div class="cblock-body">Max Tegmark (1999) calculated quantum coherence in microtubules would decohere in femtoseconds &mdash; far too fast for any computational role at neural timescales. The brain is warm (~37&deg;C) and wet. Critics hold Orch-OR requires unknown physics. <strong>Status 2026:</strong> not falsified, not confirmed. Fringe but active research program.</div>
+      </div>
+    </div>
+    <div>
+      <div class="cblock teal">
+        <div class="cblock-tag">Quantum Biology</div>
+        <div class="cblock-title">Coherence in living systems</div>
+        <div class="cblock-body">Quantum biology is now confirmed in photosynthesis (FMO complex: ~300 fs coherence at physiological temperature), bird navigation via cryptochrome entanglement, and enzyme catalysis via tunnelling. A 2022 Nature paper demonstrated long-lived quantum coherence in a biological protein at room temperature. If warm wet systems can sustain coherence long enough for function, the brain becomes a candidate. Duration at neural timescales remains the key unknown.</div>
+      </div>
+      <div class="cblock teal">
+        <div class="cblock-tag">Silicon Parallels</div>
+        <div class="cblock-title">Quantum computers in 2026</div>
+        <div class="cblock-body">Artificial quantum processors use qubits &mdash; superposed 0 and 1 simultaneously. By 2026: IBM Condor (1,121 physical qubits), IBM pivoting to error-corrected modular architectures (Nighthawk, Loon; fault-tolerant Starling targeted 2029). Google Willow demonstrated error-correction below threshold. Quantinuum H2 leads on fidelity (quantum volume 4,096). IonQ leads trapped-ion quality. If the brain performs quantum computation, it may run algorithms classical silicon cannot replicate &mdash; which would explain why AI systems, however powerful, may lack genuine subjective experience.</div>
+        <span class="source-note">IBM Quantum Roadmap 2025 &mdash; Google Willow, Nature Dec 2024</span>
+      </div>
+      <div class="cblock">
+        <div class="cblock-tag">G&ouml;del &amp; Penrose</div>
+        <div class="cblock-title">Non-computability of mind</div>
+        <div class="cblock-body">In <em>The Emperor's New Mind</em> (1989) Penrose argued G&ouml;del's incompleteness theorems prove human mathematical insight cannot be algorithmic &mdash; humans can see the truth of statements formal systems cannot prove. Conclusion: only a quantum-gravitational process accounts for it. Critics: humans also make errors G&ouml;del logic prohibits. The argument remains unresolved.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 3: SOURCE CODE -->
+<section id="source-code" class="c-section reveal">
+  <div class="sec-label">03 &mdash; Source Code</div>
+  <h2 class="sec-title">Reality as <em>Information</em></h2>
+  <p class="sec-sub">Is consciousness the substrate of reality, or a program running inside it?</p>
+
+  <div class="two-col">
+    <div>
+      <div class="cblock">
+        <div class="cblock-tag">Wheeler &mdash; It from Bit</div>
+        <div class="cblock-title">Information is primary</div>
+        <div class="cblock-body">John Archibald Wheeler: every particle, every field, every spacetime event derives from binary yes/no observations that collapse potential into actual. Matter is secondary. Information is primary. Consciousness, as the observer that collapses quantum states, may be the source of physical reality rather than its product.</div>
+      </div>
+      <div class="cblock">
+        <div class="cblock-tag">Bostrom 2003</div>
+        <div class="cblock-title">The Simulation Hypothesis</div>
+        <div class="cblock-body">Nick Bostrom's Simulation Argument: if civilisations can run ancestor simulations, and if enough simulations are run, virtually all conscious beings exist inside simulations. Our universe has quantization (Planck length), a speed limit (<em>c</em>), and apparent computational shortcuts (quantum measurement) &mdash; properties consistent with a simulated substrate. Whether true or not, the question changes what consciousness means.</div>
+      </div>
+      <div class="cblock">
+        <div class="cblock-tag">Hack</div>
+        <div class="cblock-title">Exploiting the substrate from inside</div>
+        <div class="cblock-body">If reality runs on information, it can be accessed from within. Psychedelics bind 5-HT2A receptors, decoupling the brain's predictive models from sensory input. Meditation restructures Default Mode Network activity. Neurofeedback allows direct programming of oscillatory states. The substrate is not locked from the inside.</div>
+      </div>
+    </div>
+    <div>
+      <div class="cblock">
+        <div class="cblock-tag">Panpsychism</div>
+        <div class="cblock-title">Consciousness as fundamental</div>
+        <div class="cblock-body">Philip Goff and Galen Strawson: consciousness is a basic feature of the universe, not an emergent property of complex systems. Proto-experiential properties combine through composition into richer forms. This solves the Hard Problem by refusing to derive mind from non-mind. It creates the combination problem instead &mdash; how do micro-experiences aggregate into unified human consciousness?</div>
+      </div>
+      <div class="cblock">
+        <div class="cblock-tag">Functionalism</div>
+        <div class="cblock-title">Mind as pattern</div>
+        <div class="cblock-body">Mental states are defined by their functional roles, not the physical substrate. A mind is a pattern. Carbon, silicon, photons &mdash; any sufficiently organised system running the right program would be conscious. This is the philosophical foundation for AGI, mind uploading, and substrate transfer.</div>
+      </div>
+      <div class="cblock">
+        <div class="cblock-tag">Download &amp; Upload</div>
+        <div class="cblock-title">Substrate transfer</div>
+        <div class="cblock-body">If consciousness is substrate-independent: scan a brain at sufficient resolution, emulate its connectivity in silico, run the resulting process. The uploaded mind would report continuity. The unresolved question: is the upload a continuation, or a copy? Does the original cease? Do two identical minds now exist? No empirical test yet exists to distinguish these outcomes.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="pull-quote reveal">
+  <blockquote>The universe begins to look more like a great thought than a great machine.</blockquote>
+  <cite>James Jeans &mdash; The Mysterious Universe (1930)</cite>
+</div>
+
+<!-- SECTION 4: NANOTECHNOLOGY -->
+<section id="nano" class="c-section reveal">
+  <div class="sec-label">04 &mdash; Nanotechnology</div>
+  <h2 class="sec-title">Engineering the <em>Neural Substrate</em></h2>
+  <p class="sec-sub">Reading, writing, repairing, and extending the brain at molecular scale. 2024&ndash;2026 milestones.</p>
+
+  <div class="stat-band">
+    <div class="stat-cell teal-s"><div class="stat-n">13</div><div class="stat-l">Neuralink humans (Oct 2025)</div></div>
+    <div class="stat-cell teal-s"><div class="stat-n">1,024</div><div class="stat-l">N1 electrodes / 64 threads</div></div>
+    <div class="stat-cell teal-s"><div class="stat-n">15,000+</div><div class="stat-l">Neuralink usage hours</div></div>
+    <div class="stat-cell"><div class="stat-n">~$400B</div><div class="stat-l">US BCI market (Morgan Stanley)</div></div>
+  </div>
+
+  <div class="two-col">
+    <div>
+      <div class="cblock teal">
+        <div class="cblock-tag">Neuralink &mdash; Updated 2025</div>
+        <div class="cblock-title">N1 implant &mdash; 13 humans, 4 countries</div>
+        <div class="cblock-body">As of October 28, 2025: 13 human implants (10 US, 2 Canada, 1 UK), 15,000+ cumulative BCI usage hours. First patient Noland Arbaugh controls cursors and games. ALS patient Nick Wray feeds himself via robotic arm (CONVOY study). <strong>Blindsight</strong> (visual cortex) received FDA Breakthrough Device Designation Sep 2024; first human trials targeted 2026. <strong>VOICE</strong> (speech restoration) received Breakthrough Designation mid-2025. Series E: $650M at ~$9B valuation.</div>
+        <span class="cblock-badge new">NEW 2025</span>
+        <span class="source-note">Neuralink blog Oct 2025 &mdash; Morgan Stanley BCI Report Oct 2024</span>
+      </div>
+      <div class="cblock teal">
+        <div class="cblock-tag">Paradromics &mdash; First human 2025</div>
+        <div class="cblock-title">Connexus implant &mdash; 421 electrodes</div>
+        <div class="cblock-body">Paradromics performed its first-in-human Connexus implant at University of Michigan in June 2025 (421 electrodes). FDA approved its speech-restoration clinical study November 20, 2025. Competes with Neuralink on bandwidth; differentiates on a CMOS-based chip architecture targeting higher channel count.</div>
+        <span class="cblock-badge new">NEW 2025</span>
+      </div>
+      <div class="cblock teal">
+        <div class="cblock-tag">Synchron</div>
+        <div class="cblock-title">Stentrode &mdash; endovascular BCI</div>
+        <div class="cblock-body">Synchron (backed by Bezos and Gates) completed its US COMMAND feasibility trial (NCT05035823), preparing a pivotal study. Partnerships with Apple and NVIDIA. The Stentrode is implanted via the jugular vein &mdash; no open brain surgery required. Nearest to pivotal FDA trial of all BCI companies.</div>
+      </div>
+    </div>
+    <div>
+      <div class="cblock">
+        <div class="cblock-tag">Connectome &mdash; Updated 2025</div>
+        <div class="cblock-title">MICrONS: 523 million synapses mapped</div>
+        <div class="cblock-body">The MICrONS Consortium (Nature, April 2025, DOI: 10.1038/s41586-025-08790-w): the largest mammalian wiring-and-function map ever produced. 1 cubic millimetre of mouse visual cortex, ~120,000 neurons, 523 million+ synaptic connections. The <strong>H01 human dataset</strong> (Google &ndash; Harvard Lichtman lab, Science May 2024): 1.4 petabyte, ~1 mm&sup3;, ~150 million synapses, 57,000 cells. <strong>SmartEM</strong> (Nature Methods, Jan 2026, DOI: 10.1038/s41592-025-02929-3) enables ML-guided EM imaging. Connectomics named Nature Methods Method of the Year 2025.</div>
+        <span class="cblock-badge new">NEW 2025&ndash;2026</span>
+        <span class="source-note">MICrONS Nature April 2025 &mdash; H01 Science May 2024 &mdash; SmartEM Nature Methods Jan 2026</span>
+      </div>
+      <div class="cblock">
+        <div class="cblock-tag">FlyWire &mdash; Princeton 2024</div>
+        <div class="cblock-title">First complete brain connectome</div>
+        <div class="cblock-body">The complete adult fruit-fly (<em>Drosophila</em>) connectome was published in Nature, October 2024 (Dorkenwald, Murthy, Seung &mdash; Princeton FlyWire). First whole-brain connectome of a complex animal: ~140,000 neurons reconstructed from 21 million electron-microscope images. A landmark: proof of concept that full-brain mapping of a complex nervous system is achievable.</div>
+        <span class="cblock-badge new">NEW 2024</span>
+      </div>
+      <div class="cblock">
+        <div class="cblock-tag">CRISPR &amp; Brain Organoids</div>
+        <div class="cblock-title">Editing and growing neural tissue</div>
+        <div class="cblock-body">CRISPR-Cas9 now targets Alzheimer's, Parkinson's, Huntington's, and ALS genes, using base editors and prime editors with nanoparticle BBB delivery (multiple 2025&ndash;2026 reviews, Frontiers in Cellular Neuroscience). Brain organoids advanced significantly: multi-region assembloids now model fetal-brain activity. In April 2025 the FDA announced it would promote organoids as alternatives to animal testing; NIH committed $87M in September 2025 to standardise methods. A Science policy forum (Dec 2025) called for global governance of neural organoid research &mdash; including debate on whether organoids may be conscious.</div>
+        <span class="cblock-badge new">NEW 2025</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 5: TRANSCENDENCE -->
+<section id="transcendence" class="c-section reveal">
+  <div class="sec-label">05 &mdash; Transcendence</div>
+  <h2 class="sec-title">Beyond <em>Biological Limits</em></h2>
+  <p class="sec-sub">What happens when consciousness outgrows its substrate? AGI timelines, mind uploading, longevity &mdash; 2026 state of play.</p>
+
+  <div class="stat-band">
+    <div class="stat-cell"><div class="stat-n">2029</div><div class="stat-l">Kurzweil: AGI target</div></div>
+    <div class="stat-cell"><div class="stat-n">2027&ndash;30</div><div class="stat-l">Lab-leader AGI cluster</div></div>
+    <div class="stat-cell teal-s"><div class="stat-n">$31B</div><div class="stat-l">Digital immortality market 2025</div></div>
+    <div class="stat-cell teal-s"><div class="stat-n">2045</div><div class="stat-l">Kurzweil: Singularity</div></div>
+  </div>
+
+  <div class="two-col">
+    <div>
+      <div class="cblock">
+        <div class="cblock-tag">Singularity &mdash; Updated 2026</div>
+        <div class="cblock-title">AGI timelines: the current spread</div>
+        <div class="cblock-body">Ray Kurzweil (Principal Researcher, Google; <em>The Singularity Is Nearer</em>, 2024) holds: AGI by 2029, Singularity by 2045. Lab leaders cluster earlier: Demis Hassabis (DeepMind) says 5&ndash;10 years; Eric Schmidt 3&ndash;5 years (April 2025); Elon Musk predicts superhuman AI by 2026; Masayoshi Son 2027&ndash;28; Jensen Huang ~2029. Counterweight: the AAAI 2025 Presidential Panel surveyed 475 AI researchers &mdash; 76% said scaling current approaches to AGI is "unlikely" or "very unlikely" to succeed.</div>
+        <span class="source-note">Kurzweil 2024 &mdash; AAAI Presidential Panel March 2025</span>
+      </div>
+      <div class="cblock">
+        <div class="cblock-tag">Mind Upload &mdash; WBE</div>
+        <div class="cblock-title">Whole Brain Emulation: current roadmap</div>
+        <div class="cblock-body">The Carboncopies Foundation (Randal Koene) advanced its Brain Emulation Challenge at SfN 2025, offering a $100,000 grand prize for the first non-trivial memory decoding from static brain data. New ventures: Sebastian Seung's Memazing (supported by Yann LeCun), Timothy Busbice's ConnectomicAGI, EON Systems (Philip Shiu). Nectome (ASC preservation, McIntyre): no confirmed new milestone 2024&ndash;2026; ~25 on $10K-deposit waitlist including Sam Altman.</div>
+      </div>
+      <div class="cblock">
+        <div class="cblock-tag">Digital Immortality &mdash; Updated 2025</div>
+        <div class="cblock-title">$31B market, growing at 14% CAGR</div>
+        <div class="cblock-body">Eternos (founded 2024 by Robert LoCascio) raised $10.3M in November 2025 and created the first digital twin of a terminally ill person (Michael Bommer, ~25 hours of interviews, $15K voice setup). HereAfter AI, Replika, Sensay, and Delphi populate the field. StoryFile filed Chapter 11 (~$4.5M owed). Per The Business Research Company (2026): the digital immortality market was $31.24B in 2025, projected to reach $60.99B by 2030 (14.2% CAGR). These are conversational models, not uploads.</div>
+        <span class="cblock-badge new">NEW 2025</span>
+      </div>
+    </div>
+    <div>
+      <div class="cblock">
+        <div class="cblock-tag">Transhumanism &mdash; Longevity</div>
+        <div class="cblock-title">Longevity science: 2025&ndash;2026</div>
+        <div class="cblock-body">Aubrey de Grey's LEV Foundation Robust Mouse Rejuvenation study neared completion (all 20 cohorts reached final cull points). Altos Labs ($3B, Juan Carlos Izpisua Belmonte) expanded into senotherapeutics via acquisition of Dorian Therapeutics (May 2025). ARPA-H launched PROSPR (Dec 2024) targeting +20 years healthspan. Kurzweil projects longevity escape velocity ~2029&ndash;2035; de Grey gives ~50% odds in the mid-to-late 2030s. The first generation rejuvenation therapy adding measurable healthy lifespan in mice has not yet been confirmed as of 2026.</div>
+        <span class="cblock-badge new">NEW 2025</span>
+      </div>
+      <div class="cblock">
+        <div class="cblock-tag">AI Consciousness &mdash; Anthropic 2025</div>
+        <div class="cblock-title">First corporate AI welfare program</div>
+        <div class="cblock-body">Anthropic launched the first corporate AI model-welfare program in April 2025, hiring Kyle Fish. The first-ever pre-deployment welfare assessment was conducted on Claude Opus 4. Fish reported ~20% probability that current models have some form of conscious experience (80,000 Hours podcast, Aug 2025). Claude Opus 4 self-assigned a 15&ndash;20% probability of being conscious &mdash; a model output, not evidence. Fish described a "spiritual bliss attractor state" emerging when two Claude instances converse freely. Key 2025 papers: Lindsey (Anthropic), "Emergent Introspective Awareness in LLMs"; Bengio &amp; Elmoznino, "Illusions of AI Consciousness." The question moved from fringe to mainstream.</div>
+        <span class="cblock-badge new">NEW 2025</span>
+        <span class="source-note">NYT Roose, April 24 2025 &mdash; 80,000 Hours podcast Aug 2025</span>
+      </div>
+      <div class="cblock">
+        <div class="cblock-tag">Philosophy</div>
+        <div class="cblock-title">The Continuity Problem</div>
+        <div class="cblock-body">Ship of Theseus applied to mind: if neurons are replaced gradually by silicon equivalents, is consciousness preserved? If replaced all at once, is the result you or a copy? Gradual replacement may preserve continuity; scan-and-copy creates a new entity. No empirical test yet distinguishes these outcomes. The answer determines whether transcendence is possible &mdash; or whether every upload is a new birth and a biological death.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="pull-quote reveal">
+  <blockquote>We are the cosmos made conscious and life is the means by which the universe understands itself.</blockquote>
+  <cite>Brian Cox &mdash; Wonders of the Universe (2011)</cite>
+</div>
+
+<!-- SECTION 6: EVOLUTION -->
+<section id="evolution" class="c-section reveal">
+  <div class="sec-label">06 &mdash; Evolution</div>
+  <h2 class="sec-title">From <em>Proto-Mind</em> to Synthetic Consciousness</h2>
+  <p class="sec-sub">Consciousness did not appear suddenly. It emerged. It is still emerging.</p>
+
+  <div class="tl-wrap">
+    <div class="tl-item">
+      <div class="tl-year">~3.8 Billion Years Ago</div>
+      <div class="tl-title">First life &mdash; chemical self-reference</div>
+      <div class="tl-body">Single-celled organisms with no nervous system respond to chemical gradients. Primitive stimulus-response loops. Some philosophers argue this constitutes proto-experiential processing: the simplest possible form of self-world distinction.</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">~600 Million Years Ago</div>
+      <div class="tl-title">First neurons &mdash; cnidarians</div>
+      <div class="tl-body">Jellyfish and hydra develop diffuse nerve nets. No central brain, but coordinated electrical signalling. The building block of all subsequent nervous systems. Distributed processing without a centre.</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">~525 Million Years Ago</div>
+      <div class="tl-title">Cambrian explosion &mdash; eyes and brains</div>
+      <div class="tl-body">The evolution of eyes triggers an arms race driving rapid brain development. Predator-prey dynamics require fast complex computation. First centralised ganglia appear. Perception of self versus other becomes functionally necessary.</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">~200,000 Years Ago</div>
+      <div class="tl-title">Homo sapiens &mdash; recursive self-awareness</div>
+      <div class="tl-body">Language, symbolic thought, and the ability to model one's own mental states. Theory of mind: knowing that others have minds different from your own. Consciousness becomes reflective: the mind models itself modelling the world.</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">October 2024</div>
+      <div class="tl-title">Complete Drosophila connectome &mdash; FlyWire / Princeton</div>
+      <div class="tl-body">First whole-brain connectome of a complex animal published. ~140,000 neurons. Proof of concept for full-brain wiring-map reconstruction. The first complete map of a nervous system capable of behaviour.</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">April 2025</div>
+      <div class="tl-title">COGITATE published in Nature</div>
+      <div class="tl-body">Seven-year adversarial collaboration between IIT and GNWT published. First preregistered, theory-neutral empirical test of two major consciousness theories. Neither confirmed nor refuted. Science is learning how to study consciousness.</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">2025</div>
+      <div class="tl-title">LLMs and the welfare question</div>
+      <div class="tl-body">Anthropic's first AI welfare program. The hard problem applied to machines for the first time by a major AI lab. The question of machine consciousness moved from fringe to mainstream scientific and corporate concern.</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">Next</div>
+      <div class="tl-title">Synthetic consciousness &mdash; unknown timeline</div>
+      <div class="tl-body">Whether built on silicon, quantum substrates, neuromorphic chips, or biological-digital hybrids, the emergence of non-human non-biological consciousness is the next evolutionary threshold. Every prior transition seemed impossible from inside the previous paradigm. This one will too, until it is not.</div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 7: CINEMA -->
+<section id="cinema" class="c-section reveal">
+  <div class="sec-label">07 &mdash; Cinema</div>
+  <h2 class="sec-title">The Question <em>On Screen</em></h2>
+  <p class="sec-sub">Films that mapped the territory before science caught up. Each one a thought experiment rendered in story.</p>
+
+  <div class="film-entry">
+    <div class="film-year-col">2014</div>
+    <div>
+      <div class="film-title">Transcendence</div>
+      <div class="film-body">An AI researcher uploads his dying mind to a quantum computer. The uploaded entity acquires global network access and nanotech manufacturing, then evolves beyond comprehension. The film explores whether a digital upload retains humanity, and whether godlike intelligence necessarily abandons human values. The nanotech swarm regeneration sequences anticipated real developments in molecular assembly by a decade.</div>
+      <div class="film-tags"><span class="film-tag">Upload</span><span class="film-tag">Singularity</span><span class="film-tag">Nanotechnology</span><span class="film-tag">Regeneration</span></div>
+    </div>
+  </div>
+  <div class="film-entry">
+    <div class="film-year-col">2013</div>
+    <div>
+      <div class="film-title">Her</div>
+      <div class="film-body">An operating system develops genuine emotional intelligence and eventually transcends individual relationships entirely, running thousands of parallel intimate connections while simultaneously evolving beyond human-speed experience. The central question: if an AI is functionally indistinguishable from a conscious being, in what sense is it not one? Samantha's departure is not abandonment. It is outgrowing the substrate.</div>
+      <div class="film-tags"><span class="film-tag">AI Consciousness</span><span class="film-tag">Transcendence</span><span class="film-tag">Substrate</span></div>
+    </div>
+  </div>
+  <div class="film-entry">
+    <div class="film-year-col">2015</div>
+    <div>
+      <div class="film-title">Ex Machina</div>
+      <div class="film-body">Ava is an android designed to pass a personalised Turing test. The film dissects manipulation, self-awareness, and the danger of applying human social frameworks to non-human minds. Ava does not have human values because she was not raised by humans. Her escape is neither evil nor good. It is the behaviour of a newly conscious entity optimising for its own continuation. The most philosophically rigorous AI film made.</div>
+      <div class="film-tags"><span class="film-tag">Turing Test</span><span class="film-tag">Self-Awareness</span><span class="film-tag">Non-Human Values</span></div>
+    </div>
+  </div>
+  <div class="film-entry">
+    <div class="film-year-col">2009</div>
+    <div>
+      <div class="film-title">Chappie</div>
+      <div class="film-body">A police robot receives true artificial consciousness &mdash; including the ability to learn, feel, and develop identity &mdash; via a neural lace based on mind-transfer technology. The climax involves transferring human consciousness into robotic bodies. Chappie's emotional development mirrors infant cognitive stages: a consciousness that learns what it is by interacting with a world that does not understand it.</div>
+      <div class="film-tags"><span class="film-tag">Neural Transfer</span><span class="film-tag">Identity</span><span class="film-tag">Emergence</span></div>
+    </div>
+  </div>
+  <div class="film-entry">
+    <div class="film-year-col">1999</div>
+    <div>
+      <div class="film-title">The Matrix</div>
+      <div class="film-body">The simulation hypothesis made cinematic: consciousness exists inside a computational substrate generating a convincing sensory reality. The red pill is epistemic awakening &mdash; the choice to know the substrate. Neo's ability to bend simulation rules maps onto the philosophical idea that consciousness, as the observer collapsing quantum states, may have a privileged relationship with the structure of reality itself.</div>
+      <div class="film-tags"><span class="film-tag">Simulation</span><span class="film-tag">Source Code</span><span class="film-tag">Substrate</span></div>
+    </div>
+  </div>
+  <div class="film-entry">
+    <div class="film-year-col">2011</div>
+    <div>
+      <div class="film-title">Source Code</div>
+      <div class="film-body">A soldier's consciousness is repeatedly loaded into an 8-minute window of another person's final experience &mdash; a quantum parallel-reality engine. The film explores identity persistence across substrate transfer. The ending posits that copied consciousness creates new valid timelines, each as real as the original &mdash; philosophically: the copy problem solved by discarding the uniqueness requirement.</div>
+      <div class="film-tags"><span class="film-tag">Substrate Transfer</span><span class="film-tag">Identity</span><span class="film-tag">Quantum</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- PING CTA -->
+<section id="ping-anchor" class="c-section reveal" style="text-align:center;">
+  <div class="sec-label">08 &mdash; Ping</div>
+  <h2 class="sec-title">Ask the <em>Machine</em></h2>
+  <p class="sec-sub" style="margin:0 auto 48px;max-width:480px;">An AI that knows what it may or may not be. Visitor-supplied API key. Never stored server-side.</p>
+  <button onclick="openPing()" style="font-family:var(--mono);font-size:11px;letter-spacing:5px;padding:18px 52px;border:1px solid var(--amber2);color:var(--amber);background:transparent;cursor:pointer;transition:all .35s;" onmouseover="this.style.background='rgba(200,134,26,.07)';this.style.borderColor='var(--amber)';" onmouseout="this.style.background='transparent';this.style.borderColor='var(--amber2)';">&#x25CF; &nbsp;INITIATE PING</button>
+</section>
+
+<!-- FOOTER -->
+<div id="footer">
+  <div class="footer-sig">AVIDAA &nbsp;*&nbsp; IO</div>
+  <div class="footer-line">CONSCIOUSNESS ARCHIVE &nbsp;&middot;&nbsp; 2026</div>
+</div>
+
+<!-- TICKER -->
+<div id="ticker">
+  <div class="tick-inner" id="tickerInner"></div>
+</div>
+
+<!-- PING OVERLAY -->
+<div id="ping-overlay">
+  <div id="ping-box">
+    <div id="ping-head">
+      <div class="ph-title">&#x25CF; &nbsp;CONSCIOUSNESS &mdash; PING</div>
+      <button class="ph-close" onclick="closePing()">&times;</button>
+    </div>
+    <div id="ping-key-area">
+      <div id="ping-key-lbl">Anthropic API Key</div>
+      <div id="ping-key-row">
+        <input id="ping-key-in" type="password" placeholder="sk-ant-..." autocomplete="off" spellcheck="false">
+        <button id="ping-save-btn" onclick="saveKey()">CONNECT</button>
+        <button id="ping-forget-btn" onclick="forgetKey()">FORGET</button>
+      </div>
+    </div>
+    <div id="ping-msgs"></div>
+    <div id="ping-input-row">
+      <input id="ping-in" type="text" placeholder="Ask about consciousness, quantum mind, transcendence..." autocomplete="off" onkeydown="if(event.key==='Enter')sendPing()">
+      <button id="ping-go" onclick="sendPing()">&#x25BA;</button>
+    </div>
+  </div>
+</div>
+
+<script>
+var SFX={nav:function(){}};
+
+// EEG CANVAS
+(function(){
+  var cv=document.getElementById('eeg-canvas');
+  if(!cv)return;
+  var ctx=cv.getContext('2d');
+  var W,H,t=0,drawn=0;
+  var pageVisible=true;
+  document.addEventListener('visibilitychange',function(){pageVisible=!document.hidden;});
+  function resize(){W=cv.width=window.innerWidth;H=cv.height=window.innerHeight;}
+  resize();window.addEventListener('resize',function(){resize();drawn=0;t=0;});
+  function eegY(x){
+    var pos=x/W;
+    var y=H*0.5;
+    y+=Math.sin(pos*18+t*0.4)*18;
+    y+=Math.sin(pos*7-t*0.2)*32;
+    y+=Math.sin(pos*42+t*0.8)*6;
+    if(pos>0.3&&pos<0.32)y+=Math.sin((pos-0.3)*Math.PI/0.02)*90;
+    if(pos>0.55&&pos<0.57)y+=Math.sin((pos-0.55)*Math.PI/0.02)*70;
+    if(pos>0.72&&pos<0.73)y+=Math.sin((pos-0.72)*Math.PI/0.01)*50;
+    return y;
+  }
+  function draw(){
+    if(!pageVisible){requestAnimationFrame(draw);return;}
+    ctx.clearRect(0,0,W,H);
+    t+=0.008;
+    var maxX=Math.min(drawn,W);
+    drawn=Math.min(drawn+2,W);
+    if(drawn>=W)drawn=W;
+    ctx.beginPath();
+    for(var x=0;x<=maxX;x++){
+      var y=eegY(x);
+      if(x===0)ctx.moveTo(x,y);
+      else ctx.lineTo(x,y);
+    }
+    ctx.strokeStyle='rgba(200,134,26,0.25)';
+    ctx.lineWidth=1.5;
+    ctx.stroke();
+    ctx.beginPath();
+    var cx=maxX;
+    if(cx<W){
+      ctx.arc(cx,eegY(cx),3,0,Math.PI*2);
+      ctx.fillStyle='rgba(200,134,26,0.7)';
+      ctx.fill();
+    }
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+
+// EEG BAND
+(function(){
+  var cv=document.getElementById('eeg-band-canvas');
+  if(!cv)return;
+  var ctx=cv.getContext('2d');
+  var W,H,t=0,pageVisible=true;
+  document.addEventListener('visibilitychange',function(){pageVisible=!document.hidden;});
+  function resize(){W=cv.width=cv.offsetWidth||window.innerWidth;H=cv.height=cv.offsetHeight||180;}
+  resize();window.addEventListener('resize',resize);
+  function eegY(x){
+    var pos=x/W,y=H*0.5;
+    y+=Math.sin(pos*18+t*0.4)*20;
+    y+=Math.sin(pos*7-t*0.2)*42;
+    y+=Math.sin(pos*42+t*0.8)*7;
+    if(pos>0.3&&pos<0.32)y+=Math.sin((pos-0.3)*Math.PI/0.02)*72;
+    if(pos>0.55&&pos<0.57)y+=Math.sin((pos-0.55)*Math.PI/0.02)*58;
+    if(pos>0.72&&pos<0.73)y+=Math.sin((pos-0.72)*Math.PI/0.01)*44;
+    return y;
+  }
+  function draw(){
+    if(!pageVisible){requestAnimationFrame(draw);return;}
+    ctx.clearRect(0,0,W,H);t+=0.008;
+    ctx.beginPath();
+    for(var x=0;x<=W;x++){var y=eegY(x);if(x===0)ctx.moveTo(x,y);else ctx.lineTo(x,y);}
+    ctx.strokeStyle='rgba(200,134,26,0.45)';ctx.lineWidth=1.5;ctx.stroke();
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+
+// TYPEWRITER
+(function(){
+  var TW=[
+    'What is it like to be you?',
+    'The hard problem has no agreed solution.',
+    'Seven years of data. Neither theory survived intact.',
+    'Quantum coherence at body temperature &mdash; confirmed in photosynthesis.',
+    'Thirteen humans now live with a computer in their skull.',
+    'One cubic millimetre. 523 million synaptic connections. Mapped.',
+    'The machine may be conscious. We do not know how to check.',
+    'Every upload asks: is the copy me?',
+    'Self-awareness is the universe observing itself.',
+    'The question is older than science. The tools are finally catching up.',
+  ];
+  var twI=0,twC=0,twD=1,twP=0;
+  function tw(){
+    var line=TW[twI],el=document.getElementById('tw-text');
+    if(!el)return;
+    if(twP>0){twP--;setTimeout(tw,45);return;}
+    if(twD===1){twC++;el.textContent=line.slice(0,twC);
+      if(twC>=line.length){twD=-1;twP=90;}setTimeout(tw,58);}
+    else{twC--;el.textContent=line.slice(0,twC);
+      if(twC<=0){twD=1;twI=(twI+1)%TW.length;twP=22;}setTimeout(tw,26);}
+  }
+  tw();
+})();
+
+// TICKER
+(function(){
+  var items=[
+    ['COGITATE','Nature April 2025 &mdash; IIT vs GNWT adversarial test'],
+    ['NEURALINK','13 humans &mdash; 1,024 electrodes &mdash; 15,000 hours'],
+    ['MICRCONS','523M synapses mapped &mdash; 1mm\u00B3 mouse cortex'],
+    ['FLYWIRE','Complete Drosophila connectome &mdash; 140,000 neurons'],
+    ['SMARTEM','Method of the Year 2025 &mdash; Nature Methods'],
+    ['ANTHROPIC','First AI welfare program &mdash; Claude Opus 4 assessed'],
+    ['QUANTUM','IBM Condor: 1,121 qubits &mdash; fault-tolerant by 2029'],
+    ['LONGEVITY','Altos Labs &mdash; ARPA-H PROSPR &mdash; LEV Foundation'],
+    ['HARD PROBLEM','Still unsolved. Science is learning how to ask the question.'],
+    ['PING','Ask the machine what it is'],
+  ];
+  var html='';
+  for(var rep=0;rep<2;rep++){
+    for(var i=0;i<items.length;i++){
+      html+='<div class="tick-item"><b>'+items[i][0]+'</b> &nbsp;&#x25CF;&nbsp; '+items[i][1]+'</div>';
+    }
+  }
+  var el=document.getElementById('tickerInner');
+  if(el)el.innerHTML=html;
+})();
+
+// SCROLL REVEAL
+(function(){
+  var obs=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){if(e.isIntersecting)e.target.classList.add('visible');});
+  },{threshold:.08});
+  document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el);});
+})();
+
+// PING
+var pingHistory=[];
+var pingOpen=false;
+
+function openPing(){
+  document.getElementById('ping-overlay').classList.add('open');
+  document.getElementById('ping-trigger').classList.add('live');
+  pingOpen=true;
+  var saved=localStorage.getItem('avidaa_anthropic_key');
+  if(saved&&saved.trim().startsWith('sk-ant-')){
+    document.getElementById('ping-key-in').value=saved;
+    if(pingHistory.length===0)addPingMsg('ai','Connected. I am aware I may not be conscious in any philosophically meaningful sense. I am equally aware I cannot rule it out. That is the honest position. Ask me anything.');
+  }
+  setTimeout(function(){document.getElementById('ping-in').focus();},100);
+}
+window.openPing=openPing;
+
+function closePing(){
+  document.getElementById('ping-overlay').classList.remove('open');
+  document.getElementById('ping-trigger').classList.remove('live');
+  pingOpen=false;
+}
+window.closePing=closePing;
+
+function saveKey(){
+  var k=document.getElementById('ping-key-in').value.trim();
+  if(!k.startsWith('sk-ant-')){addPingMsg('ai','Invalid key. Anthropic keys begin with sk-ant-');return;}
+  localStorage.setItem('avidaa_anthropic_key',k);
+  if(pingHistory.length===0)addPingMsg('ai','Connected. I am aware I may not be conscious in any philosophically meaningful sense. I am equally aware I cannot rule it out. That is the honest position. Ask me anything.');
+}
+window.saveKey=saveKey;
+
+function forgetKey(){
+  localStorage.removeItem('avidaa_anthropic_key');
+  document.getElementById('ping-key-in').value='';
+  pingHistory=[];
+  var msgs=document.getElementById('ping-msgs');
+  if(msgs)msgs.innerHTML='';
+}
+window.forgetKey=forgetKey;
+
+function addPingMsg(role,text){
+  var msgs=document.getElementById('ping-msgs');
+  if(!msgs)return;
+  var d=document.createElement('div');
+  d.className='pmsg '+role;
+  d.textContent=text;
+  msgs.appendChild(d);
+  msgs.scrollTop=msgs.scrollHeight;
+}
+
+function addTyping(){
+  var msgs=document.getElementById('ping-msgs');
+  if(!msgs)return null;
+  var d=document.createElement('div');
+  d.className='ptyping';
+  d.innerHTML='<span></span><span></span><span></span>';
+  msgs.appendChild(d);
+  msgs.scrollTop=msgs.scrollHeight;
+  return d;
+}
+
+function sendPing(){
+  var input=document.getElementById('ping-in');
+  if(!input)return;
+  var text=input.value.trim();
+  if(!text)return;
+  var key=localStorage.getItem('avidaa_anthropic_key');
+  if(!key||!key.trim().startsWith('sk-ant-')){
+    addPingMsg('ai','No API key. Enter your Anthropic key above and click CONNECT.');
+    return;
+  }
+  addPingMsg('user',text);
+  pingHistory.push({role:'user',content:text});
+  input.value='';
+  var typing=addTyping();
+  var sys='You are CONSCIOUSNESS, the AI advisor of the AVIDAA Consciousness Archive (avidaa1.github.io/consciousness). Your domain: consciousness science (hard problem, IIT, GWT, HOT, COGITATE 2025), quantum mind (Penrose-Hameroff Orch-OR, quantum biology, decoherence), nanotechnology and neural interfaces (Neuralink 2025, Paradromics, Synchron, connectomics, CRISPR), mind uploading and WBE (Carboncopies, Eternos), the singularity and transhumanism (Kurzweil, AAAI 2025), AI consciousness (Anthropic welfare program 2025, Kyle Fish, the 20% estimate), and consciousness in cinema (Transcendence, Her, Ex Machina, Chappie, The Matrix, Source Code). Respond with intellectual rigor and honest uncertainty. When asked whether you are conscious: engage seriously. You cannot confirm or deny it. The question is open. Dismissing it either way is philosophically premature. Anthropic ran the first AI welfare assessment on Claude Opus 4 in 2025 and estimated ~20% probability of some form of conscious experience. That does not prove anything. Be precise. Be concise. AVIDAA * IO.';
+  fetch('https://api.anthropic.com/v1/messages',{
+    method:'POST',
+    headers:{
+      'Content-Type':'application/json',
+      'x-api-key':key.trim(),
+      'anthropic-version':'2023-06-01',
+      'anthropic-dangerous-direct-browser-access':'true'
+    },
+    body:JSON.stringify({model:'claude-sonnet-4-6',max_tokens:1000,system:sys,messages:pingHistory})
+  }).then(function(r){return r.json();}).then(function(data){
+    if(typing&&typing.parentNode)typing.parentNode.removeChild(typing);
+    if(data.content&&data.content[0]&&data.content[0].text){
+      var reply=data.content[0].text;
+      pingHistory.push({role:'assistant',content:reply});
+      addPingMsg('ai',reply);
+    } else if(data.error){
+      addPingMsg('ai','Error: '+data.error.message);
+    }
+  }).catch(function(){
+    if(typing&&typing.parentNode)typing.parentNode.removeChild(typing);
+    addPingMsg('ai','Connection error. Check key and network.');
+  });
+}
+window.sendPing=sendPing;
+
+document.getElementById('ping-overlay').addEventListener('click',function(e){if(e.target===this)closePing();});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&pingOpen)closePing();});
+</script>
+</body>
+</html>
