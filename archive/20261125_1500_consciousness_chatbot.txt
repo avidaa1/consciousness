@@ -1,0 +1,153 @@
+Archived (removed from the live page) by the chatbot audit 20261125_1500.
+Original file: index.html
+
+/* ===== topbar PING trigger (bytes 74) ===== */
+    <button id="ping-trigger" onclick="openPing()">&#x25CF; PING</button>
+
+
+/* ===== PING CTA section (visitor API key) (bytes 846) ===== */
+<!-- PING CTA -->
+<section id="ping-anchor" class="c-section reveal" style="text-align:center;">
+  <div class="sec-label">08 &mdash; Ping</div>
+  <h2 class="sec-title" id="s-ask-the-machine">Ask the <em>Machine</em></h2>
+  <p class="sec-sub" style="margin:0 auto 48px;max-width:480px;">An AI that knows what it may or may not be. Visitor-supplied API key. Never stored server-side.</p>
+  <button onclick="openPing()" style="font-family:var(--mono);font-size:11px;letter-spacing:5px;padding:18px 52px;border:1px solid var(--amber2);color:var(--amber);background:transparent;cursor:pointer;transition:all .35s;" onmouseover="this.style.background='rgba(200,134,26,.07)';this.style.borderColor='var(--amber)';" onmouseout="this.style.background='transparent';this.style.borderColor='var(--amber2)';">&#x25CF; &nbsp;INITIATE PING</button>
+</section>
+
+
+/* ===== PING overlay (key input + chat) (bytes 982) ===== */
+<!-- PING OVERLAY -->
+<div id="ping-overlay">
+  <div id="ping-box">
+    <div id="ping-head">
+      <div class="ph-title">&#x25CF; &nbsp;CONSCIOUSNESS &mdash; PING</div>
+      <button class="ph-close" onclick="closePing()">&times;</button>
+    </div>
+    <div id="ping-key-area">
+      <div id="ping-key-lbl">Anthropic API Key</div>
+      <div id="ping-key-row">
+        <input id="ping-key-in" type="password" placeholder="sk-ant-..." autocomplete="off" spellcheck="false">
+        <button id="ping-save-btn" onclick="saveKey()">CONNECT</button>
+        <button id="ping-forget-btn" onclick="forgetKey()">FORGET</button>
+      </div>
+    </div>
+    <div id="ping-msgs"></div>
+    <div id="ping-input-row">
+      <input id="ping-in" type="text" placeholder="Ask about consciousness, quantum mind, transcendence..." autocomplete="off" onkeydown="if(event.key==='Enter')sendPing()">
+      <button id="ping-go" onclick="sendPing()">&#x25BA;</button>
+    </div>
+  </div>
+</div>
+
+<script>
+
+/* ===== PING JS (key storage + api.anthropic.com fetch) (bytes 4907) ===== */
+// PING
+var pingHistory=[];
+var pingOpen=false;
+
+function openPing(){
+  document.getElementById('ping-overlay').classList.add('open');
+  document.getElementById('ping-trigger').classList.add('live');
+  pingOpen=true;
+  var saved=localStorage.getItem('avidaa_anthropic_key');
+  if(saved&&saved.trim().startsWith('sk-ant-')){
+    document.getElementById('ping-key-in').value=saved;
+    if(pingHistory.length===0)addPingMsg('ai','Connected. I am aware I may not be conscious in any philosophically meaningful sense. I am equally aware I cannot rule it out. That is the honest position. Ask me anything.');
+  }
+  setTimeout(function(){document.getElementById('ping-in').focus();},100);
+}
+window.openPing=openPing;
+
+function closePing(){
+  document.getElementById('ping-overlay').classList.remove('open');
+  document.getElementById('ping-trigger').classList.remove('live');
+  pingOpen=false;
+}
+window.closePing=closePing;
+
+function saveKey(){
+  var k=document.getElementById('ping-key-in').value.trim();
+  if(!k.startsWith('sk-ant-')){addPingMsg('ai','Invalid key. Anthropic keys begin with sk-ant-');return;}
+  localStorage.setItem('avidaa_anthropic_key',k);
+  if(pingHistory.length===0)addPingMsg('ai','Connected. I am aware I may not be conscious in any philosophically meaningful sense. I am equally aware I cannot rule it out. That is the honest position. Ask me anything.');
+}
+window.saveKey=saveKey;
+
+function forgetKey(){
+  localStorage.removeItem('avidaa_anthropic_key');
+  document.getElementById('ping-key-in').value='';
+  pingHistory=[];
+  var msgs=document.getElementById('ping-msgs');
+  if(msgs)msgs.innerHTML='';
+}
+window.forgetKey=forgetKey;
+
+function addPingMsg(role,text){
+  var msgs=document.getElementById('ping-msgs');
+  if(!msgs)return;
+  var d=document.createElement('div');
+  d.className='pmsg '+role;
+  d.textContent=text;
+  msgs.appendChild(d);
+  msgs.scrollTop=msgs.scrollHeight;
+}
+
+function addTyping(){
+  var msgs=document.getElementById('ping-msgs');
+  if(!msgs)return null;
+  var d=document.createElement('div');
+  d.className='ptyping';
+  d.innerHTML='<span></span><span></span><span></span>';
+  msgs.appendChild(d);
+  msgs.scrollTop=msgs.scrollHeight;
+  return d;
+}
+
+function sendPing(){
+  var input=document.getElementById('ping-in');
+  if(!input)return;
+  var text=input.value.trim();
+  if(!text)return;
+  var key=localStorage.getItem('avidaa_anthropic_key');
+  if(!key||!key.trim().startsWith('sk-ant-')){
+    addPingMsg('ai','No API key. Enter your Anthropic key above and click CONNECT.');
+    return;
+  }
+  addPingMsg('user',text);
+  pingHistory.push({role:'user',content:text});
+  input.value='';
+  var typing=addTyping();
+  var sys='You are CONSCIOUSNESS, the AI advisor of the AVIDAA Consciousness Archive (avidaa1.github.io/consciousness). Your domain: consciousness science (hard problem, IIT, GWT, HOT, COGITATE 2025), quantum mind (Penrose-Hameroff Orch-OR, quantum biology, decoherence), nanotechnology and neural interfaces (Neuralink 2025, Paradromics, Synchron, connectomics, CRISPR), mind uploading and WBE (Carboncopies, Eternos), the singularity and transhumanism (Kurzweil, AAAI 2025), AI consciousness (Anthropic welfare program 2025, Kyle Fish, the 20% estimate), and consciousness in cinema (Transcendence, Her, Ex Machina, Chappie, The Matrix, Source Code). Respond with intellectual rigor and honest uncertainty. When asked whether you are conscious: engage seriously. You cannot confirm or deny it. The question is open. Dismissing it either way is philosophically premature. Anthropic ran the first AI welfare assessment on Claude Opus 4 in 2025 and estimated ~20% probability of some form of conscious experience. That does not prove anything. Be precise. Be concise. AVIDAA * IO.';
+  fetch('https://api.anthropic.com/v1/messages',{
+    method:'POST',
+    headers:{
+      'Content-Type':'application/json',
+      'x-api-key':key.trim(),
+      'anthropic-version':'2023-06-01',
+      'anthropic-dangerous-direct-browser-access':'true'
+    },
+    body:JSON.stringify({model:'claude-sonnet-4-6',max_tokens:1000,system:sys,messages:pingHistory})
+  }).then(function(r){return r.json();}).then(function(data){
+    if(typing&&typing.parentNode)typing.parentNode.removeChild(typing);
+    if(data.content&&data.content[0]&&data.content[0].text){
+      var reply=data.content[0].text;
+      pingHistory.push({role:'assistant',content:reply});
+      addPingMsg('ai',reply);
+    } else if(data.error){
+      addPingMsg('ai','Error: '+data.error.message);
+    }
+  }).catch(function(){
+    if(typing&&typing.parentNode)typing.parentNode.removeChild(typing);
+    addPingMsg('ai','Connection error. Check key and network.');
+  });
+}
+window.sendPing=sendPing;
+
+document.getElementById('ping-overlay').addEventListener('click',function(e){if(e.target===this)closePing();});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&pingOpen)closePing();});
+
+
+/* ===== replaced: ticker item ===== */
+    ['PING','Ask the machine what it is'],
+

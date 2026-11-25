@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230a0806'/%3E%3Ccircle cx='16' cy='16' r='9' fill='none' stroke='%23c8861a' stroke-width='1.2'/%3E%3Ccircle cx='16' cy='16' r='2.5' fill='%23c8861a'/%3E%3C/svg%3E">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.gstatic.com; font-src https://fonts.gstatic.com; connect-src https://api.anthropic.com https://www.google-analytics.com; img-src 'self' data:; frame-ancestors 'none';">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.gstatic.com; font-src https://fonts.gstatic.com; connect-src https://www.google-analytics.com; img-src 'self' data:; frame-ancestors 'none';">
 <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
 <meta name="referrer" content="no-referrer">
 <title>CONSCIOUSNESS &mdash; AVIDAA</title>
@@ -274,7 +274,6 @@ body{background:var(--bg);color:var(--bone2);font-family:var(--body);font-size:1
   <div id="topbar-wordmark">Consciousness</div>
   <nav id="topbar-nav">
     <a id="back-home" href="https://avidaa1.github.io">AVIDAA</a>
-    <button id="ping-trigger" onclick="openPing()">&#x25CF; PING</button>
   </nav>
 </header>
 <div id="section-nav-bar">
@@ -679,13 +678,6 @@ body{background:var(--bg);color:var(--bone2);font-family:var(--body);font-size:1
   </div>
 </section>
 
-<!-- PING CTA -->
-<section id="ping-anchor" class="c-section reveal" style="text-align:center;">
-  <div class="sec-label">08 &mdash; Ping</div>
-  <h2 class="sec-title" id="s-ask-the-machine">Ask the <em>Machine</em></h2>
-  <p class="sec-sub" style="margin:0 auto 48px;max-width:480px;">An AI that knows what it may or may not be. Visitor-supplied API key. Never stored server-side.</p>
-  <button onclick="openPing()" style="font-family:var(--mono);font-size:11px;letter-spacing:5px;padding:18px 52px;border:1px solid var(--amber2);color:var(--amber);background:transparent;cursor:pointer;transition:all .35s;" onmouseover="this.style.background='rgba(200,134,26,.07)';this.style.borderColor='var(--amber)';" onmouseout="this.style.background='transparent';this.style.borderColor='var(--amber2)';">&#x25CF; &nbsp;INITIATE PING</button>
-</section>
 
 <!-- FOOTER -->
 <div id="footer">
@@ -696,29 +688,6 @@ body{background:var(--bg);color:var(--bone2);font-family:var(--body);font-size:1
 <!-- TICKER -->
 <div id="ticker">
   <div class="tick-inner" id="tickerInner"></div>
-</div>
-
-<!-- PING OVERLAY -->
-<div id="ping-overlay">
-  <div id="ping-box">
-    <div id="ping-head">
-      <div class="ph-title">&#x25CF; &nbsp;CONSCIOUSNESS &mdash; PING</div>
-      <button class="ph-close" onclick="closePing()">&times;</button>
-    </div>
-    <div id="ping-key-area">
-      <div id="ping-key-lbl">Anthropic API Key</div>
-      <div id="ping-key-row">
-        <input id="ping-key-in" type="password" placeholder="sk-ant-..." autocomplete="off" spellcheck="false">
-        <button id="ping-save-btn" onclick="saveKey()">CONNECT</button>
-        <button id="ping-forget-btn" onclick="forgetKey()">FORGET</button>
-      </div>
-    </div>
-    <div id="ping-msgs"></div>
-    <div id="ping-input-row">
-      <input id="ping-in" type="text" placeholder="Ask about consciousness, quantum mind, transcendence..." autocomplete="off" onkeydown="if(event.key==='Enter')sendPing()">
-      <button id="ping-go" onclick="sendPing()">&#x25BA;</button>
-    </div>
-  </div>
 </div>
 
 <script>
@@ -842,7 +811,6 @@ var SFX={nav:function(){}};
     ['QUANTUM','IBM Condor: 1,121 qubits &mdash; fault-tolerant by 2029'],
     ['LONGEVITY','Altos Labs &mdash; ARPA-H PROSPR &mdash; LEV Foundation'],
     ['HARD PROBLEM','Still unsolved. Science is learning how to ask the question.'],
-    ['PING','Ask the machine what it is'],
   ];
   var html='';
   for(var rep=0;rep<2;rep++){
@@ -862,110 +830,6 @@ var SFX={nav:function(){}};
   document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el);});
 })();
 
-// PING
-var pingHistory=[];
-var pingOpen=false;
-
-function openPing(){
-  document.getElementById('ping-overlay').classList.add('open');
-  document.getElementById('ping-trigger').classList.add('live');
-  pingOpen=true;
-  var saved=localStorage.getItem('avidaa_anthropic_key');
-  if(saved&&saved.trim().startsWith('sk-ant-')){
-    document.getElementById('ping-key-in').value=saved;
-    if(pingHistory.length===0)addPingMsg('ai','Connected. I am aware I may not be conscious in any philosophically meaningful sense. I am equally aware I cannot rule it out. That is the honest position. Ask me anything.');
-  }
-  setTimeout(function(){document.getElementById('ping-in').focus();},100);
-}
-window.openPing=openPing;
-
-function closePing(){
-  document.getElementById('ping-overlay').classList.remove('open');
-  document.getElementById('ping-trigger').classList.remove('live');
-  pingOpen=false;
-}
-window.closePing=closePing;
-
-function saveKey(){
-  var k=document.getElementById('ping-key-in').value.trim();
-  if(!k.startsWith('sk-ant-')){addPingMsg('ai','Invalid key. Anthropic keys begin with sk-ant-');return;}
-  localStorage.setItem('avidaa_anthropic_key',k);
-  if(pingHistory.length===0)addPingMsg('ai','Connected. I am aware I may not be conscious in any philosophically meaningful sense. I am equally aware I cannot rule it out. That is the honest position. Ask me anything.');
-}
-window.saveKey=saveKey;
-
-function forgetKey(){
-  localStorage.removeItem('avidaa_anthropic_key');
-  document.getElementById('ping-key-in').value='';
-  pingHistory=[];
-  var msgs=document.getElementById('ping-msgs');
-  if(msgs)msgs.innerHTML='';
-}
-window.forgetKey=forgetKey;
-
-function addPingMsg(role,text){
-  var msgs=document.getElementById('ping-msgs');
-  if(!msgs)return;
-  var d=document.createElement('div');
-  d.className='pmsg '+role;
-  d.textContent=text;
-  msgs.appendChild(d);
-  msgs.scrollTop=msgs.scrollHeight;
-}
-
-function addTyping(){
-  var msgs=document.getElementById('ping-msgs');
-  if(!msgs)return null;
-  var d=document.createElement('div');
-  d.className='ptyping';
-  d.innerHTML='<span></span><span></span><span></span>';
-  msgs.appendChild(d);
-  msgs.scrollTop=msgs.scrollHeight;
-  return d;
-}
-
-function sendPing(){
-  var input=document.getElementById('ping-in');
-  if(!input)return;
-  var text=input.value.trim();
-  if(!text)return;
-  var key=localStorage.getItem('avidaa_anthropic_key');
-  if(!key||!key.trim().startsWith('sk-ant-')){
-    addPingMsg('ai','No API key. Enter your Anthropic key above and click CONNECT.');
-    return;
-  }
-  addPingMsg('user',text);
-  pingHistory.push({role:'user',content:text});
-  input.value='';
-  var typing=addTyping();
-  var sys='You are CONSCIOUSNESS, the AI advisor of the AVIDAA Consciousness Archive (avidaa1.github.io/consciousness). Your domain: consciousness science (hard problem, IIT, GWT, HOT, COGITATE 2025), quantum mind (Penrose-Hameroff Orch-OR, quantum biology, decoherence), nanotechnology and neural interfaces (Neuralink 2025, Paradromics, Synchron, connectomics, CRISPR), mind uploading and WBE (Carboncopies, Eternos), the singularity and transhumanism (Kurzweil, AAAI 2025), AI consciousness (Anthropic welfare program 2025, Kyle Fish, the 20% estimate), and consciousness in cinema (Transcendence, Her, Ex Machina, Chappie, The Matrix, Source Code). Respond with intellectual rigor and honest uncertainty. When asked whether you are conscious: engage seriously. You cannot confirm or deny it. The question is open. Dismissing it either way is philosophically premature. Anthropic ran the first AI welfare assessment on Claude Opus 4 in 2025 and estimated ~20% probability of some form of conscious experience. That does not prove anything. Be precise. Be concise. AVIDAA * IO.';
-  fetch('https://api.anthropic.com/v1/messages',{
-    method:'POST',
-    headers:{
-      'Content-Type':'application/json',
-      'x-api-key':key.trim(),
-      'anthropic-version':'2023-06-01',
-      'anthropic-dangerous-direct-browser-access':'true'
-    },
-    body:JSON.stringify({model:'claude-sonnet-4-6',max_tokens:1000,system:sys,messages:pingHistory})
-  }).then(function(r){return r.json();}).then(function(data){
-    if(typing&&typing.parentNode)typing.parentNode.removeChild(typing);
-    if(data.content&&data.content[0]&&data.content[0].text){
-      var reply=data.content[0].text;
-      pingHistory.push({role:'assistant',content:reply});
-      addPingMsg('ai',reply);
-    } else if(data.error){
-      addPingMsg('ai','Error: '+data.error.message);
-    }
-  }).catch(function(){
-    if(typing&&typing.parentNode)typing.parentNode.removeChild(typing);
-    addPingMsg('ai','Connection error. Check key and network.');
-  });
-}
-window.sendPing=sendPing;
-
-document.getElementById('ping-overlay').addEventListener('click',function(e){if(e.target===this)closePing();});
-document.addEventListener('keydown',function(e){if(e.key==='Escape'&&pingOpen)closePing();});
 </script>
 <script id="mp-js-20261124">/* mobile pass 20261124: finger-size targets and readable text on phones and tablets */
 (function(){var MIN=44,t=null;
@@ -987,7 +851,7 @@ if(document.readyState==='complete')start();else addEventListener('load',start);
 addEventListener('resize',sched);})();</script><script id="av-shell-20261124">/* AVIDAA shell: shared header (or floating pill) + footer with the "Last updated" stamp. No outside calls, no tracking.
    Template tokens are replaced when a page is built: Consciousness --av-knowledge Knowledge 2026-11-24 06:36 */
 (function(){
-  var NAME='Consciousness',SECTOR='--av-knowledge',STAMP='2026-11-25 14:45',HOME='https://avidaa1.github.io/';
+  var NAME='Consciousness',SECTOR='--av-knowledge',STAMP='2026-11-25 15:20',HOME='https://avidaa1.github.io/';
   var ARROW='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
   function build(){
     if(!document.body||document.querySelector('.av-footer'))return;
